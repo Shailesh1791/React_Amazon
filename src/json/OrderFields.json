@@ -1,0 +1,54 @@
+{
+    "fieldColumns": [
+        {
+            "name": "firstName",
+            "label": "First Name",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": true,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "lastName",
+            "label": "Last Name",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "address",
+            "label": "Address",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "city",
+            "label": "City",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "state",
+            "label": "State",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": true,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        }
+    ]
+}

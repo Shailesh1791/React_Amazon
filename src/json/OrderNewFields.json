@@ -1,0 +1,44 @@
+{
+    "fieldColumns": [
+        {
+            "name": "orderId",
+            "label": "Order ID",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": true,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "orderName",
+            "label": "Order Name",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "price",
+            "label": "Price",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        }
+    ]
+}

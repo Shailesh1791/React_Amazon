@@ -1,0 +1,100 @@
+---
+parameters:
+  - name: releaseId
+    type: string
+    displayName: Release WorkItem ID
+    default: "7206346"
+
+trigger: none
+
+variables:
+  - group: 51786-NonProd
+
+  - name: VERSION
+    value: "0.0.1"
+
+  - name: APP-VERSION
+    value: $(VERSION)-$(Build.SourceBranchName)-$(Build.BuildNumber)
+
+resources:
+  repositories:
+    - repository: governed-templates
+      name: dj-core/governed-templates
+      ref: main
+      type: git
+
+extends:
+  template: governed-template/build-and-deploy.yml@governed-templates
+  parameters:
+    releaseId: ${{ parameters.releaseId }}
+    ITEM: 51786
+    buildStackName: node
+    buildStackParams:
+      pool: "sc-linux"
+      nodeVersion: "16.14.8"
+      npmTaskList:
+        - name: "Run Test"
+          task: run test 
+        - name: "Run Build"
+          task: run build
+      packageVersion: $(VERSION)
+      testResultsFiles: "**/junit.xml"
+      sonarSources: "src"
+      sonarExclusions: "**/*test.*,src/Root/**.*"
+      testCoveragePath: "coverage/lcov-report"
+      coverageSummaryFileLocation: "coverage/codertura-coverage.xml"
+      sonarCoveragePath: "coverage/lcov-info"
+      generateUnitTestReport: true
+      generateCodeCoverage: true
+      npmRepoName: "npm-release"
+      uiNpmApp: true
+      uiNpmBuildDir: dist
+      deployStackName: "ansible"
+      deploymentFolderName: "ado-playbook"
+      archiveType: "zip"
+      targetPathArtifactory: "generic-release"
+      skipEarlyFeedback: true
+      deployStackName: ansible
+      deployStackParams:
+        inventoryPath: "ado-playbook/inventory/host.ini"
+        playbookPath: "ado-playbook/playbook/playbook.yml"
+        ansibleVerboseLevel: -vv 
+        globalSSHKey: true
+      deployEnvironments:
+        - name: dev
+          environment: dev
+          displayName: DEV
+          notifyUsers: FSS_Payments_Serv@abc.com
+          pool: sc-linux
+          checkInventoryHosts: dev
+          extraVars: "app_version=$(APP-VERSION) project_path=$(Build.ArtifactStagingDirectory) env_name=dev"
+
+        - name: qa
+          environment: qa
+          displayName: SIT
+          notifyUsers: FSS_Payments_Serv@abc.com
+          pool: sc-linux
+          checkInventoryHosts: sit
+          extraVars: "app_version=$(APP-VERSION) project_path=$(Build.ArtifactStagingDirectory) env_name=sit"
+          dependsOn:
+            - dev
+
+        - name: staging
+          environment: staging
+          displayName: UAT
+          notifyUsers: FSS_Payments_Serv@abc.com
+          pool: sc-linux
+          checkInventoryHosts: uat
+          extraVars: "app_version=$(APP-VERSION) project_path=$(Build.ArtifactStagingDirectory) env_name=uat"
+          dependsOn:
+            - qa
+
+        - name: prod
+          environment: production
+          displayName: prod
+          notifyUsers: FSS_Payments_Serv@abc.com
+          pool: sc-linux
+          checkInventoryHosts: prod
+          extraVars: "app_version=$(APP-VERSION) project_path=$(Build.ArtifactStagingDirectory) env_name=prod"
+          dependsOn:
+            - staging

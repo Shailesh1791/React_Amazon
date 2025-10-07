@@ -1,0 +1,96 @@
+{
+    "fieldColumns": [
+        {
+            "name": "productId",
+            "label": "Product ID",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": true,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "name",
+            "label": "Product Name",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "category",
+            "label": "Category",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "price",
+            "label": "Price",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "description",
+            "label": "Description",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "state",
+            "label": "State",
+            "inputType": "Select",
+            "valType": "string",
+            "inputOptions": {
+                "isStoreDriven": false,
+                "isApiDriven": false,
+                "isDirect": true,
+                "directOptions": {
+                    "labels": [
+                        "Azamgarh",
+                        "Meerut",
+                        "Lucknow",
+                        "Varanasi"
+                    ],
+                    "values": [
+                        "Azamgarh",
+                        "Meerut",
+                        "Lucknow",
+                        "Varanasi"
+                    ],
+                    "defaultValue": "Varanasi"
+                },
+                "storeOptions": {
+                    "storeObj": "",
+                    "defaultValue": "",
+                    "primaryKey": "",
+                    "labelField": ""
+                },
+                "apiOptions": {
+                    "getDataApi": "",
+                    "defaultValue": "",
+                    "primaryKey": "",
+                    "labelField": ""
+                }
+            },
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        }
+    ]
+}

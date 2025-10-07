@@ -1,0 +1,61 @@
+{
+    "products":[
+                   {
+                        "id": 1,
+                        "name": "Apple iPhone 15",
+                        "category": "Electronics",
+                        "price": 999.99,
+                        "stock": 25,
+                        "rating": 4.5
+                    },
+                    {
+                        "id": 2,
+                        "name": "Samsung Galaxy S24",
+                        "category": "Electronics",
+                        "price": 899.99,
+                        "stock": 40,
+                        "rating": 4.4
+                    },
+                    {
+                        "id": 3,
+                        "name": "Sony WH-1000XM5 Headphones",
+                        "category": "Audio",
+                        "price": 349.99,
+                        "stock": 15,
+                        "rating": 4.7
+                    },
+                    {
+                        "id": 4,
+                        "name": "Dell XPS 13 Laptop",
+                        "category": "Computers",
+                        "price": 1199.99,
+                        "stock": 10,
+                        "rating": 4.3
+                    },
+                    {
+                        "id": 5,
+                        "name": "Logitech MX Master 3 Mouse",
+                        "category": "Accessories",
+                        "price": 99.99,
+                        "stock": 60,
+                        "rating": 4.8
+                    },
+                    {
+                        "id": 6,
+                        "name": "Nike Air Zoom Pegasus",
+                        "category": "Footwear",
+                        "price": 129.99,
+                        "stock": 30,
+                        "rating": 4.6
+                    },
+                    {
+                        "id": 7,
+                        "name": "Canon EOS R50 Camera",
+                        "category": "Photography",
+                        "price": 799.99,
+                        "stock": 8,
+                        "rating": 4.5
+                    }
+                ]
+
+}

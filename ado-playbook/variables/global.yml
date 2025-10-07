@@ -1,0 +1,4 @@
+---
+package_name: nginx
+username: nginxadm
+artifactory_url: "https://artifactory.global.standardchartered.com/artifactory/npm-release/fss_business_rules.tgz"

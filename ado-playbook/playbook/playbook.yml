@@ -1,0 +1,70 @@
+---
+- name: Check and Setup FSS Service Payments
+  hosts: "{{env_name}}"
+  gather_facts: false
+
+  vars_files:
+    -"{{project_path}}/ado-playbook/variables/{{env_name}}.yml"
+    -"{{project_path}}/ado-playbook/variables/global.yml"
+
+  tasks:
+    - name: Check if user exists
+      command: "id -u {{username}}"
+      register: user
+      ignore_errors: true
+
+    - name: Display error and exit if user is not present
+      fail: 
+        msg: "User {{username}} does not exist"
+      when: user.rc != 0
+
+    - name: Check if package is installed
+      command: "rpm -qa {{package_name}}"
+      register: package_status
+      ignore_errors: true
+
+    - name: Display status if package is installed
+      debug: 
+        msg: "Package {{package_name}} is already installed."
+      when: package_status.rc == 0
+
+    - name: Display status if package is not installed
+      debug: 
+        msg: "Package {{package_name}} is not installed."
+      when: package_status.rc != 0
+
+    - name: Create directory if they don't exist for deployment
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: "{{folder_permission}}"
+      loop: "{{dir_req}}"
+
+    - name: Setting permission 0777 to all sub folders 
+      ansible.builtin.shell: "chmod -R 777 {{existing_build_dir}}"
+      when: inventory_hostname == 'dev'
+
+    - name: Downloading FSS SERVICES User provision artifactory
+      ansible.builtin.get_url:
+        url: "{{artifactory_url}}"
+        dest: "{{download_dir}}/fssservices-business-rules.tgz"
+        mode: "{{folder_permission}}"
+        backup: yes
+
+    - name: Delete content & directory
+      ansible.builtin.file:
+        state: absent
+        path: "{{existing_build_dir}}"
+
+    - name: Create build directory
+      file:
+        path: "{{existing_build_dir}}"
+        state: directory
+        mode: "{{folder_permission}}"
+
+    - name: Unzip FSS SERVICES User provision module build
+      unarchive:
+        src: "{{download_dir}}/fssservices-business-rules.tgz"
+        dest: "{{existing_build_dir}}"
+        remote_src: yes
+        mode: "{{folder_permission}}"

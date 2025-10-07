@@ -1,0 +1,16 @@
+---
+nginx_instance: nginx-FSS_UK_05A_UAT_01
+folder_name: fssservices-business-rules
+app_dir: /apps/nginx/instances/{{nginx_instance}}
+folder_path: "{{app_dir}}/www/html"
+backup_path: /apps/nginx/uat
+backup_dir: "{{backup_path}}/fssservices-business-rules-backup"
+download_dir: "{{backup_path}}/fssservices-business-rules-build"
+existing_build_dir: "{{folder_path}}/fss-apps-nonprod/{{folder_name}}"
+folder_permission: 0755
+dir_req:
+  - "{{folder_path}}/fss-apps-nonprod"
+  - "{{existing_build_dir}}"
+  - "{{backup_path}}"
+  - "{{backup_dir}}"
+  - "{{download_dir}}"
