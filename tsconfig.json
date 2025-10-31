@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["jest", "@testing-library/jest-dom"],
     "resolveJsonModule": true,
     "target": "ES6",
     "module": "ESNext",
@@ -11,5 +12,5 @@
     "skipLibCheck": true,
     "outDir": "./dist"
   },
-  "include": ["src"]
+  "include": ["src", "src/types"]
 }

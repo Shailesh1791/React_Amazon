@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Profiler id="profiler" onRender={profilerCallBack}>
       <Provider data={{}}>
-        <LoginPage />
+        <DashboardRoute />
       </Provider>
     </Profiler>
   </StrictMode>,

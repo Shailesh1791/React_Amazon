@@ -78,6 +78,7 @@ const LoginPage = () => {
                                     id="email"
                                     label="Email Address"
                                     name="email"
+                                    data-testid="email-input"
                                     autoComplete="email"
                                     autoFocus
                                 />
@@ -89,6 +90,7 @@ const LoginPage = () => {
                                     label="Password"
                                     type="password"
                                     id="password"
+                                    data-testid="password-input"
                                     autoComplete="current-password"
                                 />
                                 <FormControlLabel

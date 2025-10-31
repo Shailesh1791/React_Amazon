@@ -71,6 +71,7 @@ const SaveOrderPage: React.FC<childProp> = ({ onOrderSave }) => {
                             margin="normal"
                             label="First name"
                             name="firstName"
+                            data-testid="firstName-input"
                             value={formData.firstName}
                             onChange={handleChange}
                         />
@@ -79,6 +80,7 @@ const SaveOrderPage: React.FC<childProp> = ({ onOrderSave }) => {
                             margin="normal"
                             label="Last name"
                             name="lastName"
+                            data-testid="lastName-input"
                             value={formData.lastName}
                             onChange={handleChange}
                         />
@@ -87,6 +89,7 @@ const SaveOrderPage: React.FC<childProp> = ({ onOrderSave }) => {
                             margin="normal"
                             label="Address"
                             name="address"
+                            data-testid="address-input"
                             value={formData.address}
                             onChange={handleChange}
                         />
@@ -95,6 +98,7 @@ const SaveOrderPage: React.FC<childProp> = ({ onOrderSave }) => {
                             margin="normal"
                             label="City"
                             name="city"
+                            data-testid="city-input"
                             value={formData.city}
                             onChange={handleChange}
                         />
@@ -103,6 +107,7 @@ const SaveOrderPage: React.FC<childProp> = ({ onOrderSave }) => {
                             margin="normal"
                             label="State"
                             name="state"
+                            data-testid="state-input"
                             value={formData.state}
                             onChange={handleChange}
                         />
