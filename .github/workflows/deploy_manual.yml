@@ -2,6 +2,26 @@ name: Build and Deploy (Manual)
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Select deployment environment'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - staging
+          - testing
+
+      version:
+        description: 'Enter version tag (optional)'
+        required: false
+        default: 'v1.0.0'
+
+      build_command:
+        description: 'Custom build command (optional)'
+        required: false
+        default: 'npm run build'
 
 jobs:
   build:
