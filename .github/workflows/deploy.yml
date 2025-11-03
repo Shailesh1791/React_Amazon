@@ -9,22 +9,40 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      # 1️⃣ Checkout your repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # 2️⃣ Set up Node.js (choose your version)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      - name: Build the app
+      # 4️⃣ Run tests with coverage
+      - name: Run tests
+        run: npm test -- --coverage --watchAll=false
+
+      # 5️⃣ Build React app for production
+      - name: Build React app
         run: npm run build
 
-      - name: Deploy to GitHub Pages 🚀
-        uses: peaceiris/actions-gh-pages@v4
+      # 6️⃣ Upload production build as an artifact (optional)
+      - name: Upload production build
+        uses: actions/upload-artifact@v4
+        with:
+          name: react-build
+          path: build/
+
+      # 7️⃣ (Optional) Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./build
