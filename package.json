@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://shailesh1791.github.io/React_Amazon",
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
