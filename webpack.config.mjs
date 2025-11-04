@@ -12,6 +12,7 @@ const Config = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/React_Amazon/",
     clean: true,
   },
   mode: "development",
