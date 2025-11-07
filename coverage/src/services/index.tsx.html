@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.42% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/35</span>
+                <span class='fraction'>15/35</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">55.55% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>5/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/30</span>
+                <span class='fraction'>12/30</span>
             </div>
         
             
@@ -107,45 +107,45 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,41 +155,41 @@
 import useDispatcher from "../hooks/dispatcher";
 &nbsp;
 &nbsp;
-export const dashboardMappingService = <span class="fstat-no" title="function not covered" >() =</span>&gt; {
+export const dashboardMappingService = () =&gt; {
 &nbsp;
-    const { dispatchOrderList } = <span class="cstat-no" title="statement not covered" >useDispatcher();</span>
-    const { dispatchProductList } = <span class="cstat-no" title="statement not covered" >useDispatcher();</span>
+    const { dispatchOrderList } = useDispatcher();
+    const { dispatchProductList } = useDispatcher();
 &nbsp;
-    const getOrderDataList = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async () =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
-        const response = <span class="cstat-no" title="statement not covered" >await serviceApi.get("/orders");</span>
+    const getOrderDataList = async () =&gt; {
+        const response = await serviceApi.get("/orders");
         const data = <span class="cstat-no" title="statement not covered" >response.data;</span>
 <span class="cstat-no" title="statement not covered" >        dispatchOrderList(data);</span>
 <span class="cstat-no" title="statement not covered" >        console.log("Orders Response -", data);</span>
 <span class="cstat-no" title="statement not covered" >        return data;</span>
     };
 &nbsp;
-    const getProductDataList = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async () =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+    const getProductDataList = async () =&gt; {
+        const response = await serviceApi.get("/products");
+        const data = <span class="cstat-no" title="statement not covered" >response.data;</span>
+<span class="cstat-no" title="statement not covered" >        dispatchProductList(data);</span>
+<span class="cstat-no" title="statement not covered" >        console.log("Products Response -", data);</span>
+<span class="cstat-no" title="statement not covered" >        return data;</span>
+    };
+    const getProductDropDown = <span class="fstat-no" title="function not covered" >async () =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
         const response = <span class="cstat-no" title="statement not covered" >await serviceApi.get("/products");</span>
         const data = <span class="cstat-no" title="statement not covered" >response.data;</span>
 <span class="cstat-no" title="statement not covered" >        dispatchProductList(data);</span>
 <span class="cstat-no" title="statement not covered" >        console.log("Products Response -", data);</span>
 <span class="cstat-no" title="statement not covered" >        return data;</span>
     };
-    const getProductDropDown = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async () =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
+    const getOrderDropDown = <span class="fstat-no" title="function not covered" >async () =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span>
         const response = <span class="cstat-no" title="statement not covered" >await serviceApi.get("/products");</span>
         const data = <span class="cstat-no" title="statement not covered" >response.data;</span>
 <span class="cstat-no" title="statement not covered" >        dispatchProductList(data);</span>
 <span class="cstat-no" title="statement not covered" >        console.log("Products Response -", data);</span>
 <span class="cstat-no" title="statement not covered" >        return data;</span>
     };
-    const getOrderDropDown = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async () =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
-        const response = <span class="cstat-no" title="statement not covered" >await serviceApi.get("/products");</span>
-        const data = <span class="cstat-no" title="statement not covered" >response.data;</span>
-<span class="cstat-no" title="statement not covered" >        dispatchProductList(data);</span>
-<span class="cstat-no" title="statement not covered" >        console.log("Products Response -", data);</span>
-<span class="cstat-no" title="statement not covered" >        return data;</span>
-    };
-<span class="cstat-no" title="statement not covered" >    return {</span>
+    return {
         getOrderDataList,
         getProductDataList,
         getProductDropDown,
@@ -202,7 +202,7 @@ export const dashboardMappingService = <span class="fstat-no" title="function no
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-03T02:53:27.407Z
+                at 2025-11-07T06:56:58.550Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

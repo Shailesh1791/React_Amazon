@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>8/12</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -106,7 +106,7 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,35 +121,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { createContext, ReactNode, useState } from "react";</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { createContext, ReactNode, useState } from "react";
 &nbsp;
 type Product = {
     productId: String,
@@ -164,30 +164,30 @@ type ProductContextType = {
     removeProduct: (prd: Product) =&gt; void
 };
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >ProductContext = createContext&lt;ProductContextType | undefined&gt;(undefined);</span>
+export const ProductContext = createContext&lt;ProductContextType | undefined&gt;(undefined);
 &nbsp;
 type ProductProviderType = {
     children: ReactNode
 }
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >ProductProvider: React.FC&lt;ProductProviderType&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>{</span> children }) =&gt; {</span>
+export const ProductProvider: React.FC&lt;ProductProviderType&gt; = ({ children }) =&gt; {
 &nbsp;
-    const [products, setProducts] = <span class="cstat-no" title="statement not covered" >useState&lt;Product[]&gt;([{</span>
+    const [products, setProducts] = useState&lt;Product[]&gt;([{
         "productId": "0",
         "name": "Pulsar Bike",
         "description": "Pulsar Bike for office purpose",
         "price": "250000"
     }]);
 &nbsp;
-    const addProduct = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>rd: Product) =&gt; {</span>
+    const addProduct = <span class="fstat-no" title="function not covered" >(p</span>rd: Product) =&gt; {
 <span class="cstat-no" title="statement not covered" >        setProducts(<span class="fstat-no" title="function not covered" >prds </span>=&gt; <span class="cstat-no" title="statement not covered" >[...prds, prd])</span>;</span>
     }
 &nbsp;
-    const removeProduct = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>rd: Product) =&gt; {</span>
+    const removeProduct = <span class="fstat-no" title="function not covered" >(p</span>rd: Product) =&gt; {
 <span class="cstat-no" title="statement not covered" >        setProducts(<span class="fstat-no" title="function not covered" >prds </span>=&gt; <span class="cstat-no" title="statement not covered" >[...prds, prd])</span>;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;ProductContext.Provider value={{ products, addProduct, removeProduct }}&gt;
             {children}
         &lt;/ProductContext.Provider&gt;
@@ -199,7 +199,7 @@ export const <span class="cstat-no" title="statement not covered" >ProductProvid
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-03T02:53:27.270Z
+                at 2025-11-07T06:56:58.495Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,7 +107,7 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,14 +122,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,20 +138,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { createContext, useState, ReactNode } from "react";</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { createContext, useState, ReactNode } from "react";
 &nbsp;
 type Order = {
   orderId: String,
@@ -166,14 +166,14 @@ type OrderContextType = {
   removeOrder: (orderId: String) =&gt; void
 }
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >OrderContext = createContext&lt;OrderContextType | undefined&gt;(undefined);</span>
+export const OrderContext = createContext&lt;OrderContextType | undefined&gt;(undefined);
 &nbsp;
 type OrderProviderProps = {
   children: ReactNode;
 };
 &nbsp;
-export const <span class="cstat-no" title="statement not covered" >OrderProvider: React.FC&lt;OrderProviderProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>{</span> children }) =&gt; {</span>
-  const [orders, setOrders] = <span class="cstat-no" title="statement not covered" >useState&lt;Order[]&gt;([</span>
+export const OrderProvider: React.FC&lt;OrderProviderProps&gt; = ({ children }) =&gt; {
+  const [orders, setOrders] = useState&lt;Order[]&gt;([
     {
       orderId: "100",
       orderName: "IPhone Mobile",
@@ -182,15 +182,15 @@ export const <span class="cstat-no" title="statement not covered" >OrderProvider
     }
   ]);
 &nbsp;
-  const addOrder = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(o</span>rder: Order) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setOrders(<span class="fstat-no" title="function not covered" >ord </span>=&gt; <span class="cstat-no" title="statement not covered" >[...ord, order])</span>;</span>
+  const addOrder = (order: Order) =&gt; {
+    setOrders(ord =&gt; [...ord, order]);
   };
 &nbsp;
-  const removeOrder = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(o</span>rderId: String) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    setOrders(<span class="fstat-no" title="function not covered" >(p</span>rev) =&gt; <span class="cstat-no" title="statement not covered" >prev.filter(<span class="fstat-no" title="function not covered" >(p</span>) =&gt; <span class="cstat-no" title="statement not covered" >p.orderId !== orderId)</span>)</span>;</span>
+  const removeOrder = (orderId: String) =&gt; {
+    setOrders((prev) =&gt; prev.filter((p) =&gt; p.orderId !== orderId));
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;OrderContext.Provider value={{ orders, addOrder, removeOrder }}&gt;
       {children}
     &lt;/OrderContext.Provider&gt;
@@ -202,7 +202,7 @@ export const <span class="cstat-no" title="statement not covered" >OrderProvider
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-03T02:53:27.270Z
+                at 2025-11-07T06:56:58.495Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

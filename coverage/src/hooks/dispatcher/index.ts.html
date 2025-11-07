@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.36% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/11</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.36% </span>
+                <span class="strong">81.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/11</span>
+                <span class='fraction'>9/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -88,51 +88,51 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext } from "../provider";
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext } from "../provider";
 import { ActionType } from "../provider/ActionType";
 &nbsp;
-const useDispatcher=<span class="fstat-no" title="function not covered" >()=</span>&gt;{
-    const [store, dispatch]=<span class="cstat-no" title="statement not covered" >useContext();</span>
-<span class="cstat-no" title="statement not covered" >    console.log(store);</span>
-    const dispatchOrderList=<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(o</span>rderData: any)=&gt;{</span>
+const useDispatcher=()=&gt;{
+    const [store, dispatch]=useContext();
+    console.log(store);
+    const dispatchOrderList=<span class="fstat-no" title="function not covered" >(o</span>rderData: any)=&gt;{
 <span class="cstat-no" title="statement not covered" >        dispatch({</span>
             type: ActionType.SET_ORDER_LIST,
             data: orderData
         });
     }
 &nbsp;
-    const dispatchProductList=<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>roductData: any)=&gt;{</span>
+    const dispatchProductList=<span class="fstat-no" title="function not covered" >(p</span>roductData: any)=&gt;{
 <span class="cstat-no" title="statement not covered" >        dispatch({</span>
             type: ActionType.SET_PRODUCT_LIST,
             data: productData
         });
     }
-<span class="cstat-no" title="statement not covered" >    return {</span>
+    return {
         dispatchOrderList,
         dispatchProductList
     }
@@ -145,7 +145,7 @@ export default useDispatcher;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-03T02:53:27.407Z
+                at 2025-11-07T06:56:58.550Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

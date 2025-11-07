@@ -30,17 +30,17 @@ const OrderDisplayPage: React.FC = () => {
         <>
             <div>
                 <h2>Add Order</h2>
-                <input id='ordID' name='orderId' type='text' value={order.orderId} onChange={handleChange} />
+                <input id='ordID' name='orderId' type='text' data-testid="orderIDTest" value={order.orderId} onChange={handleChange} />
                 <input id='ordname' name='orderName' type='text' value={order.orderName} onChange={handleChange} />
                 <input id='ordID2' name='price' type='text' value={order.price} onChange={handleChange} />
                 <input id='ordID3' name='description' type='text' value={order.description} onChange={handleChange} />
-                <button onClick={() => addOrder(order)}>Add Order</button>
-                <button onClick={() => removeOrder("200")}>Remove Order</button>
+                <button data-testid="addOrderBtn" onClick={() => addOrder(order)}>Add Order</button>
+                <button data-testid="removeOrderBtn" onClick={() => removeOrder("200")}>Remove Order</button>
             </div>
             <div>
                 <h2>Order Page</h2>
-                {orders && orders.map((order) => (
-                    <div>
+                {orders && orders.map((order,indx) => (
+                    <div key={indx}>
                         <p>Name: {order.orderName}</p>
                         <p>Description: {order.description}</p>
                         <p>Price: {order.price}</p>

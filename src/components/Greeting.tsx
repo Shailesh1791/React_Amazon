@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Greeting: React.FC<Props> = ({ name }) => {
-  const data = useFetch("");
+  const data = useFetch("http://localhost:3000/login");
   useEffect(() => {
     console.log(data);
   }, []);

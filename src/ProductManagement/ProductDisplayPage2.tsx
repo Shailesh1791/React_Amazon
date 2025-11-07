@@ -11,7 +11,7 @@ import { ProductContext } from "./ProductContext";
 const ProductDisplay2: React.FC = (): React.ReactElement => {
     const prodContex = useContext(ProductContext);
     if (!prodContex) {
-        throw new Error('Order must be used within a UserProvider');
+        throw new Error('Product must be used within a UserProvider');
     }
     const { products } = prodContex;
 

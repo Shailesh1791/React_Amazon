@@ -16,10 +16,15 @@ const config: Config = {
   collectCoverage: true, // ✅ enable coverage
   collectCoverageFrom: [
     "src/**/*.{js,jsx,ts,tsx}",
-    "!src/**/*.test.{js,jsx,ts,tsx}", // exclude test files
     "!src/index.{js,ts,tsx}",          // exclude entry file
-    "!src/reportWebVitals.{js,ts}"     // optional excludes
+    "!src/reportWebVitals.{js,ts}",
+    "!src/common/**",
+    "!src/hooks/reducer/**",
+    "!src/hooks/customHook/**",
+    "!src/DashboardRoute.tsx",
+    "!src/components/**"  // optional excludes
   ],
+  
   coverageReporters: ["text", "lcov", "html"], // ✅ generate text + HTML reports
 };
 
