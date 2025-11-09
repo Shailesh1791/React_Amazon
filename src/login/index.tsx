@@ -3,20 +3,30 @@ import { green } from "@mui/material/colors";
 import Paper from "@mui/material/Paper";
 import React, { useEffect, useState } from "react";
 import amazonPic from "../assets/amazonG.png";
+import { useNavigate } from "react-router-dom";
+import { userLogin } from "../services/LoginService";
 
 const LoginPage = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("admin");
+    const [password, setPassword] = useState("admin123");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         console.log('Email -', email);
         console.log('Password -', password);
     }, [email, password]);
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async(e: any) => {
         e.preventDefault();
         setError("Hello");
+        const payload = {
+            username: email,
+            password: password
+        };
+        const response = await userLogin(payload);   
+        localStorage.setItem("token", response);
+        navigate("/amazon-app/home");
     }
 
     return (

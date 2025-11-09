@@ -1,5 +1,7 @@
 import serviceApi from "./ServiceConfig";
 import useDispatcher from "../hooks/dispatcher";
+import { getOrder, addOrder, getOrderById, updateOrder, removeOrder } from "./OrderService";
+import { getProduct, addProduct, getProductById, updateProduct, removeProduct } from "./ProductService";
 
 
 export const dashboardMappingService = () => {
@@ -8,30 +10,26 @@ export const dashboardMappingService = () => {
     const { dispatchProductList } = useDispatcher();
 
     const getOrderDataList = async () => {
-        const response = await serviceApi.get("/orders");
-        const data = response.data;
+        const data = await getOrder();
         dispatchOrderList(data);
         console.log("Orders Response -", data);
         return data;
     };
 
     const getProductDataList = async () => {
-        const response = await serviceApi.get("/products");
-        const data = response.data;
+        const data = await getProduct();
         dispatchProductList(data);
         console.log("Products Response -", data);
         return data;
     };
     const getProductDropDown = async () => {
-        const response = await serviceApi.get("/products");
-        const data = response.data;
+        const data = await getProduct();
         dispatchProductList(data);
         console.log("Products Response -", data);
         return data;
     };
     const getOrderDropDown = async () => {
-        const response = await serviceApi.get("/products");
-        const data = response.data;
+        const data = await getProduct();
         dispatchProductList(data);
         console.log("Products Response -", data);
         return data;

@@ -1,9 +1,9 @@
 import { StrictMode, Profiler } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import DashboardRoute from './DashboardRoute';
 import Provider from './hooks/provider';
-import LoginPage from './login';
+import { BrowserRouter } from "react-router-dom";
+import ApplicationRoute from "./routes"
 
 const profilerCallBack = (
   id: string,
@@ -20,7 +20,9 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Profiler id="profiler" onRender={profilerCallBack}>
       <Provider data={{}}>
-        <DashboardRoute />
+        <BrowserRouter>
+          <ApplicationRoute />
+        </BrowserRouter>
       </Provider>
     </Profiler>
   </StrictMode>,
