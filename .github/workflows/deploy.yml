@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: staging
     steps:
       # 1️⃣ Checkout your repository
       - name: Checkout repository
@@ -30,7 +31,7 @@ jobs:
 
       # 5️⃣ Build React app for production
       - name: Build React app
-        run: npm run build
+        run: npm run build:staging
 
       # 6️⃣ Upload production build as an artifact (optional)
       - name: Upload production build
