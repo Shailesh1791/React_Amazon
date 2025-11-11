@@ -11,7 +11,7 @@ const ApplicationRoute: React.FC = () => {
         <>
             <Suspense fallback={<div>Loading route...</div>}>
                 <Routes>
-                    <Route path="/" element={<LoginPage />}></Route>
+                    <Route path="/login" element={<LoginPage />}></Route>
                     <Route path="/amazon-app/*" element={
                         <ProtectedRoute>
                             <DashboardRoute />

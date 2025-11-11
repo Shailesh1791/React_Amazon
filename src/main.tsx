@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import Provider from './hooks/provider';
 import { BrowserRouter } from "react-router-dom";
-import ApplicationRoute from "./routes"
+import ApplicationRoute from "./ApplicationRoute"
 
 const profilerCallBack = (
   id: string,

@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { userLogin } from "../services/LoginService";
 
 const LoginPage = () => {
-    const [email, setEmail] = useState("admin");
-    const [password, setPassword] = useState("admin123");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
@@ -17,16 +17,31 @@ const LoginPage = () => {
         console.log('Password -', password);
     }, [email, password]);
 
-    const handleSubmit = async(e: any) => {
+    const handleOnChange = (event: any) => {
+        const eventName = event.target.name;
+        if (eventName === "email")
+            setEmail(event.target.value.trim())
+        else
+            setPassword(event.target.value.trim());
+
+    };
+
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
         setError("Hello");
         const payload = {
             username: email,
             password: password
         };
-        const response = await userLogin(payload);   
-        localStorage.setItem("token", response);
-        navigate("/amazon-app/home");
+        const response = await userLogin(payload);
+        if (response.trim()) {
+            localStorage.setItem("token", response);
+            navigate("/amazon-app/home");
+        } else {
+            setEmail("");
+            setPassword("");
+            setError("Invalid username or password");
+        }
     }
 
     return (
@@ -88,9 +103,11 @@ const LoginPage = () => {
                                     id="email"
                                     label="Email Address"
                                     name="email"
+                                    value={email}
                                     data-testid="email-input"
                                     autoComplete="email"
                                     autoFocus
+                                    onChange={(event) => handleOnChange(event)}
                                 />
                                 <TextField
                                     margin="normal"
@@ -100,9 +117,14 @@ const LoginPage = () => {
                                     label="Password"
                                     type="password"
                                     id="password"
+                                    value={password}
                                     data-testid="password-input"
                                     autoComplete="current-password"
+                                    onChange={(event) => handleOnChange(event)}
                                 />
+                                {error && (
+                                    <div style={{ color: "red", marginBottom: 10 }}>{error}</div>
+                                )}
                                 <FormControlLabel
                                     control={<Checkbox value="remember" color="primary" />}
                                     label="Remember me"

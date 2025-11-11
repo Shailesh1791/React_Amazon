@@ -6,6 +6,7 @@ import {
 } from 'material-react-table';
 import { Button, Grid } from "@mui/material";
 import SaveOrderPage from "./SaveOrderPage";
+import { Box, Typography } from "@mui/material";
 import { useContext } from "../hooks/provider";
 import OrderFields from "../json/OrderNewFields.json";
 import FormComponent from "../common/FormComponent";
@@ -104,44 +105,28 @@ const OrderDashboard: React.FC = (): React.ReactElement => {
 
   return (
     <ErrorBoundary>
-      <Button onClick={() => setOrderFlag(true)}>Show Order</Button>
-      <Button onClick={() => setOrderFlag(false)}>Add Order</Button>
-      <Button onClick={() => setShowUIType(!showUIType)}>Show UI Type</Button>
-      <div>
-        <FormComponent
-          selectedRow={[]}
-          selectCountry={"India"}
-          actType="create"
-          listOfFields={OrderFields}
-          formTitle="Create Order"
-          typeOfButton="button"
-          userOnSubmit={orderSave}
-        ></FormComponent>
-      </div>
-      {orderFlag &&
-        <MaterialReactTable
-          columns={columns}
-          data={orderData}
-          pageCount={orderData.length}
-          columnFilterDisplayMode="subheader"
-        />
-      }
-      {!orderFlag &&
-        <SaveOrderPage onOrderSave={saveOrder} />
-      }
-      {showUIType &&
-        <Grid container spacing={2}>
-          <Grid size={{xs:2}}>
-            Left Grid
-          </Grid>
-          <Grid size={{xs:2}}>
-            Middle Grid
-          </Grid>
-           <Grid size={{xs:2}}>
-            Right Grid
-          </Grid>
-        </Grid>
-      }
+      <Box p={2}>
+        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+          <Typography variant="h6">Order List</Typography>
+          <FormComponent
+            selectedRow={[]}
+            selectCountry={"India"}
+            actType="create"
+            listOfFields={OrderFields}
+            formTitle="Create Order"
+            typeOfButton="button"
+            userOnSubmit={orderSave}
+          ></FormComponent>
+        </Box>
+        <Box>
+          <MaterialReactTable
+            columns={columns}
+            data={orderData}
+            pageCount={orderData.length}
+            columnFilterDisplayMode="subheader"
+          />
+        </Box>
+      </Box>
     </ErrorBoundary>
   );
 };
