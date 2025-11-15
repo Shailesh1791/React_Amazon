@@ -12,6 +12,9 @@ const masterReducer=(store : RootModel, action : IAction) : RootModel=>{
         case ActionType.SET_PRODUCT_LIST:
             store!.storeProcess!.productList =action.data as any;
             break;
+        case ActionType.SET_SELECTED_PRODUCT:
+            store!.storeProcess!.selectProductList=action.data as any;
+            break;
     }
     return store;
 }

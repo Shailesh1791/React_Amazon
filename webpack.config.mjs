@@ -2,6 +2,7 @@ import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -39,8 +40,18 @@ const Config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "public/index.html",
+      template: path.resolve(__dirname, "public", "index.html"),
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, "public"),
+          to: ".",
+          globOptions: {
+            ignore: ["**/index.html"]   // prevent duplicate index.html
+          }
+        } // copy everything from public → dist
+      ]
+    })
   ],
   devServer: {
     static: "./dist",

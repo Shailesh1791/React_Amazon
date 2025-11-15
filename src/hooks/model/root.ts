@@ -12,7 +12,8 @@ export interface StoreProcess {
     orderList?: [] | any,
     productList?: [] | any,
     amazonStore?: [] | any,
-    storeOptions?: [] | any
+    storeOptions?: [] | any,
+    selectProductList?: [] | any,
 };
 
 export interface RootModel {
@@ -29,5 +30,6 @@ export const initialData: RootModel = {
         productList: [],
         amazonStore: [],
         storeOptions: [],
+        selectProductList: [],
     },
 };

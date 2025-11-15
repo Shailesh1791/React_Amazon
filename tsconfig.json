@@ -10,7 +10,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "paths": {
+      "@mui/material/*": ["./node_modules/@mui/material/*"]
+    }
   },
   "include": ["src", "src/types"]
 }

@@ -17,9 +17,17 @@ const useDispatcher=()=>{
             data: productData
         });
     }
+
+    const dispatchSelectedProductList=(productData: any)=>{
+        dispatch({
+            type: ActionType.SET_SELECTED_PRODUCT,
+            data: productData
+        });
+    }
     return {
         dispatchOrderList,
-        dispatchProductList
+        dispatchProductList,
+        dispatchSelectedProductList
     }
 };
 

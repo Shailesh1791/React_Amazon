@@ -12,7 +12,7 @@ import FormComponent from "../common/FormComponent";
 
 const CartDisplay: React.FC = (): React.ReactElement => {
     const [store] = useContext();
-    const productData = store.storeProcess?.productList;
+    const productData = store.storeProcess?.selectProductList;
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
