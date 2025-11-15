@@ -45,9 +45,6 @@ const NotificationDashboard = React.lazy(() => import("./NotificationManagement/
 const OrderTrackingDashboard = React.lazy(() => import("./OrderTracking/OrderTrackingDashboard"));
 const ReactWindow = React.lazy(() => import("./Mixed/ReactWindow"));
 
-
-
-
 const DashbaordHome: React.FC = (): React.ReactElement => {
     const serviceCall = dashboardMappingService();
     const [currentPage, setCurrentPage] = useState("Order");
@@ -56,6 +53,8 @@ const DashbaordHome: React.FC = (): React.ReactElement => {
         React.useState<null | HTMLElement>(null);
 
     const isMenuOpen = Boolean(anchorEl);
+    const menuId = 'primary-search-account-menu';
+    const mobileMenuId = 'primary-search-account-menu-mobile';
 
     const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -80,6 +79,11 @@ const DashbaordHome: React.FC = (): React.ReactElement => {
         setOpen(false);
     };
 
+    const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+        setMobileMoreAnchorEl(event.currentTarget);
+    };
+
+
     useEffect(() => {
         const orderServiceCall = async () => {
             const data = await serviceCall.getOrderDataList();
@@ -92,13 +96,6 @@ const DashbaordHome: React.FC = (): React.ReactElement => {
         orderServiceCall();
         productServiceCall();
     }, []);
-
-    const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-        setMobileMoreAnchorEl(event.currentTarget);
-    };
-
-    const menuId = 'primary-search-account-menu';
-    const mobileMenuId = 'primary-search-account-menu-mobile';
 
     return (
         <Box sx={{ display: 'flex' }}>
