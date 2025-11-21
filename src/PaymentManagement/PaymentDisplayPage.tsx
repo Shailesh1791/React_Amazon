@@ -99,7 +99,6 @@ const PaymentDisplay: React.FC = (): React.ReactElement => {
         <ErrorBoundary>
             <Box p={2}>
                 <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-                    <Typography variant="h6">Payment List</Typography>
                     <FormComponent
                         selectedRow={[]}
                         selectCountry={"India"}

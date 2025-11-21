@@ -41,6 +41,66 @@
             "onEditDisable": false
         },
         {
+            "name": "rating",
+            "label": "Rating",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "stock",
+            "label": "Stock",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "discount",
+            "label": "Discount",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "title",
+            "label": "Title",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "brand",
+            "label": "Brand",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
+            "name": "imageUrl",
+            "label": "ImageUrl",
+            "inputType": "TextField",
+            "valType": "string",
+            "isRequired": false,
+            "createHide": false,
+            "updateHide": false,
+            "onEditDisable": false
+        },
+        {
             "name": "description",
             "label": "Description",
             "inputType": "TextField",

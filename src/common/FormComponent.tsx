@@ -84,6 +84,32 @@ const FormComponent = (props: any) => {
             }
             if (getResp && getResp.status)
                 handleDialogClose();
+        } else if (methodType === "update") {
+            const finalReq = submitValues;
+            const getResp = await props.userOnSubmit(finalReq);
+            if (getResp) {
+                if (getResp.status === 200 || getResp.status === 201) {
+                    setSuccessMessage({
+                        message: "Update Successfully",
+                        type: "success",
+                    });
+                }
+            }
+            if (getResp && getResp.status)
+                handleDialogClose();
+        } else if (methodType === "delete") {
+            const finalReq = submitValues;
+            const getResp = await props.userOnSubmit(finalReq);
+            if (getResp) {
+                if (getResp.status === 200) {
+                    setSuccessMessage({
+                        message: "Deleted Successfully",
+                        type: "success",
+                    });
+                }
+            }
+            if (getResp && getResp.status)
+                handleDialogClose();
         }
     }
 
@@ -408,7 +434,7 @@ const FormComponent = (props: any) => {
                             data-testid="dialog-action-close"
                         >Close</Button>
                         <Button
-                            onClick={(e) => handleSubmit(e, "delete")}
+                            onClick={(e) => handleSubmit(e, "update")}
                             variant="outlined"
                             startIcon={<UpdateIcon />}
                             color="secondary"

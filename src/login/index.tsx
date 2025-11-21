@@ -11,10 +11,13 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const [loginPayload,setLoginPayload]=useState({});
 
     useEffect(() => {
-        console.log('Email -', email);
-        console.log('Password -', password);
+        setLoginPayload({
+            username: email,
+            password: password
+        });
     }, [email, password]);
 
     const handleOnChange = (event: any) => {
@@ -28,12 +31,7 @@ const LoginPage = () => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        setError("Hello");
-        const payload = {
-            username: email,
-            password: password
-        };
-        const response = await userLogin(payload);
+        const response = await userLogin(loginPayload);
         if (response.trim()) {
             localStorage.setItem("token", response);
             navigate("/amazon-app/home");

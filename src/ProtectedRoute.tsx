@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   const token = localStorage.getItem("token");
 
-  return token ? children : <Navigate to="/login" replace />;
+  return token ? children : <Navigate to="/amazon-app/login" replace />;
 };
 
 export default ProtectedRoute;

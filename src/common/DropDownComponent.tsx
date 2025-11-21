@@ -21,7 +21,7 @@ function SelectDropDown(props: any) {
 
     const getDDValues = async () => {
         const response = await apiMethods.getOrderDropDown();
-        setDropDownList(response);
+        setDropDownList(response?.data);
     };
 
     useEffect(() => {

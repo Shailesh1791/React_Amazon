@@ -23,11 +23,6 @@ const ProductDisplayTile: React.FC = (): React.ReactElement => {
   return (
     <>
       <ErrorBoundary>
-        <div style={{ position: "sticky", top: 0, background: "#fff", zIndex: 10, padding: "10px 0" }}>
-          <Typography variant="h5" fontWeight="bold">
-            List of Products
-          </Typography>
-        </div>
         <Grid container spacing={2}>
           {productData.map((card: any, i: any) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={i}>

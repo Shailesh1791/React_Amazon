@@ -47,7 +47,7 @@ const ReactWindow = React.lazy(() => import("./Mixed/ReactWindow"));
 
 const DashbaordHome: React.FC = (): React.ReactElement => {
     const serviceCall = dashboardMappingService();
-    const [currentPage, setCurrentPage] = useState("Order");
+    const [currentPage, setCurrentPage] = useState("Product");
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
         React.useState<null | HTMLElement>(null);
@@ -161,7 +161,7 @@ const DashbaordHome: React.FC = (): React.ReactElement => {
                             <AccountCircle />
                         </IconButton>
                     </Box>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton
                             size="large"
                             aria-label="show more"
@@ -183,7 +183,7 @@ const DashbaordHome: React.FC = (): React.ReactElement => {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Order', 'Product', 'Payment', 'Inventory', 'Notification', "Cart", "Order Track"].map((text, index) => (
+                    {['Product', 'Order', 'Payment', 'Inventory', 'Notification', "Cart", "Order Track"].map((text, index) => (
                         <ListItem key={text} disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={[{ minHeight: 48, px: 2.5, }, open ? { justifyContent: 'initial', } : { justifyContent: 'center', },]}
@@ -192,8 +192,8 @@ const DashbaordHome: React.FC = (): React.ReactElement => {
                                 <ListItemIcon
                                     sx={[{ minWidth: 0, justifyContent: 'center', }, open ? { mr: 3, } : { mr: 'auto', },]}
                                 >
-                                    {index === 0 ? <AssignmentAddIcon />
-                                        : index === 1 ? <CategoryIcon />
+                                    {index === 0 ? <CategoryIcon />
+                                        : index === 1 ? <AssignmentAddIcon />
                                             : index === 2 ? <PaymentIcon />
                                                 : index === 3 ? <InventoryIcon />
                                                     : index === 4 ? <NotificationsIcon />
@@ -238,17 +238,21 @@ const DashbaordHome: React.FC = (): React.ReactElement => {
             {<DashboardMenu />}
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
-                {currentPage === "Order" ? <OrderDashboard />
-                    : currentPage === "Product" ? <ProductDashboard />
-                        : currentPage === "Payment" ? <PaymentDashboard />
-                            : currentPage === "Inventory" ? <InventoryDashboard />
-                                : currentPage === "Cart" ? <CartDashboard />
-                                    : currentPage === "Notification" ? <NotificationDashboard />
-                                        : currentPage === "Contact" ? <OrderTrackingDashboard />
-                                            : currentPage === "Help & Support" ? <OrderTrackingDashboard />
-                                                : currentPage === "SignOut" ? <OrderTrackingDashboard />
-                                                    : <ReactWindow />}
-
+                <Typography variant="h4" sx={{ flexGrow: 1 }}>
+                    Amazon - {currentPage}
+                </Typography>
+                <div style={{ marginTop: 10 }}>
+                    {currentPage === "Order" ? <OrderDashboard />
+                        : currentPage === "Product" ? <ProductDashboard />
+                            : currentPage === "Payment" ? <PaymentDashboard />
+                                : currentPage === "Inventory" ? <InventoryDashboard />
+                                    : currentPage === "Cart" ? <CartDashboard />
+                                        : currentPage === "Notification" ? <NotificationDashboard />
+                                            : currentPage === "Contact" ? <OrderTrackingDashboard />
+                                                : currentPage === "Help & Support" ? <OrderTrackingDashboard />
+                                                    : currentPage === "SignOut" ? <OrderTrackingDashboard />
+                                                        : <ReactWindow />}
+                </div>
             </Box>
         </Box>
     );
